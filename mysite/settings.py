@@ -28,16 +28,14 @@ DEBUG = True
 ALLOWED_HOSTS = ['127.0.0.1', '<your_username>.pythonanywhere.com']
 
 
-# Application definition
-
 INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'blog'
+     'django.contrib.admin',
+     'django.contrib.auth',
+  'django.contrib.contenttypes',
+  'django.contrib.sessions',
+  'django.contrib.messages',
+  'django.contrib.staticfiles',
+  'blog'
 ]
 
 MIDDLEWARE = [
@@ -50,7 +48,10 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+
+
 ROOT_URLCONF = 'mysite.urls'
+
 
 TEMPLATES = [
     {
@@ -68,6 +69,12 @@ TEMPLATES = [
     },
 ]
 
+
+# STATICFILES_DIRS = [
+# os.path.join(BASE_DIR, 'static'),
+# '/var/www/static/',
+# ]
+
 WSGI_APPLICATION = 'mysite.wsgi.application'
 
 
@@ -79,6 +86,13 @@ DATABASES = {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
+}
+
+CACHES = {
+  'default': {
+    'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+  },
+
 }
 
 
